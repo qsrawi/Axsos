@@ -1,0 +1,21 @@
+h1{
+    background-color: aquamarine;
+    font-style: italic;
+    text-align: left;
+}
+span{
+    color:red
+}
+h2{
+    background-color:rgb(99, 35, 35);
+    font-style: italic;
+    text-align: center;
+    color:white;
+}
+h3{
+    background-color:rgb(59, 26, 66);
+    font-style: italic;
+    text-align: right;
+    text-decoration: underline;
+    color:white;
+}
