@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="Profile page.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="navprofile">  
+        <h1>Profile</h1>
+            <ul class="navlinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">My Profile</a></li>
+                <li><a href="#">Find Connections</a></li>
+                <li></li>
+            </ul>
+            </div>
+
+            <button class="btn">Sign Out</button>
+    </div>
+
+    <div class="container">
+
+        <div class="container1">
+            <div class="usercard">
+                <div class="header"></div>
+                <div class="profile-circle"><img src="images\Screenshot 2021-12-07 095854.png" alt="User"></div>
+                <H1>Mussab A. Taffal</H1>
+                <div class="marker"><img src="icons\map-marker.png" alt="map-marker"><H3>Tulkarm</H3></div>
+                <div><p>Developer | Engineer | Problem Solver <br>Master of shadows and the Internet !</br></p></div>
+                <div class="gear"><img src="icons\gear.png" alt="gear"><a onclick="changeName()" href="#">edit profile</a></div>
+            </div>
+
+            <div class="education">
+                <div class="headerblacke"><h2>Education</h2></div>
+                <div class="info1">
+                    <h1>Coding Dojo - Full Stack Bootcamp</h1>
+                    <h2>Jan 2022 - April 2022</h2>
+                    <p>Triple Black Belt in Python, Mern and Java</p>
+                </div>
+                <div class="info2">
+                    <h1>An-Najah National University</h1>
+                    <h2>Aug 2014 - Dec 2018</h2>
+                    <p>Bachelor in the Science of Civil Engineering</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="sidenav1">
+                <div class="headerblack"><button>2</button><h2>Connection Requests</h2></div>
+                <div class="block1">
+                    <div class="pic">
+                    <img src="images\todd-s.jpg" alt="todd-s"><p>Todd E</p>
+                    </div>
+                    <div class="x">
+                    <img onclick="accept(this)" src="icons\accept-circle.png" alt="accept-circle">
+                    <img onclick="close(this)" src="icons\close-circle.png" alt="close-circle">
+                    </div>
+                </div>
+                <div class="block2">
+                    <div class="pic">
+                    <img src="images\phil-s.jpg" alt="Phil-s"><p>Phil K</p>
+                    </div>
+                    <div class="x">
+                    <img onclick="accept(this)" src="icons\accept-circle.png" alt="accept-circle">
+                    <img onclick="close(this)" src="icons\close-circle.png" alt="close-circle">
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="sidenav2">
+                <div class="headerblack"><button>500</button><h2>Your Connections</h2></div>
+                <div class="profileimg">
+                    <div class="b">
+                        <img src="images\adrien-s.jpg" alt="Adrien-s">
+                        <p>Adrien D</p>
+                    </div>
+                    <div class="b">
+                        <img src="images\anne-s.jpg" alt="Anne-s">
+                        <p>Anne J</p>
+                    </div>
+                    <div class="b">
+                        <img src="images\alayne-s.jpg" alt="Alayne-s">
+                        <p>Alayne T</p>
+                    </div>
+                    <div class="b">
+                        <img src="images\arry-s.jpg" alt="Arry-s">
+                        <p>Arry Y</p>
+                    </div>
+                    <div class="link">
+                        <a href="#">View More</a></div>
+                    </div>
+            </div> 
+    </div>
+
+                
+    </div>
+    <script src="Porfile page.js"></script>
+</body>
+</html>
