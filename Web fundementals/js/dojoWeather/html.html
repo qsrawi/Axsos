@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- nav -->
+    <nav>
+        <h1>DojoWeather</h1>
+        <ul>
+            <li onClick="city(this)">Jenin</li>
+            <li onClick="city(this)">Nablus</li>
+            <li onClick="city(this)">Rammallah</li>
+        </ul>
+    </nav>
+    <!-- header -->
+    <header>
+        <h2>Khroubah</h2>
+        <div>
+            <p>show tempreture in </p>
+            <select name="tempreture" id="tempreture" onchange="chooseTempreture(this)">
+                <option value="c">°C</option>
+                <option value="f">°F</option>
+            </select>
+        </div>
+    </header>
+    <div id="line"></div>
+    <!-- content -->
+    <section>
+        <div class="container">
+            <h2>Today</h2>
+            <img src="some_rain.png" alt="" srcset="">
+            <h3>some rain</h3>
+            <div>
+                <h3 class="highercolor"><span class="higher1">24</span>°</h3>
+                <h3 class="lowercolor"><span class="lower1">18</span>°</h3>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Tomorrow</h2>
+            <img src="some_sun.png" alt="" srcset="">
+            <h3>some sun</h3>
+            <div>
+                <h3 class="highercolor"><span class="higher2">27</span>°</h3>
+                <h3 class="lowercolor"><span class="lower2">19</span>°</h3>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Friday</h2>
+            <img src="some_clouds.png" alt="" srcset="">
+            <h3>some clouds</h3>
+            <div>
+                <h3 class="highercolor"><span class="higher3">21</span>°</h3>
+                <h3 class="lowercolor"><span class="lower3">16</span>°</h3>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Saturday</h2>
+            <img src="some_sun.png" alt="" srcset="">
+            <h3>some sun</h3>
+            <div>
+                <h3 class="highercolor"><span class="higher4">26</span>°</h3>
+                <h3 class="lowercolor"><span class="lower4">21</span>°</h3>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <img src="cookie.png" alt="">
+        <div>
+            <h2>Stop! cookie time</h2>
+        <p>We use cookies(sadly not the edible ones)to personalize <br>
+            content and ads , to privide social media features and to <br>
+            analyse our traffic </p>
+        </div>
+        <button onClick="removeCookie(this)">I Accept</button>
+    </footer>
+</body>
+<script src="js.js"></script>
+</html>

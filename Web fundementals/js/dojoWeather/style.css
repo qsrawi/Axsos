@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+}
+*{
+    font-family:Roboto;
+}
+/*nav*/
+nav{
+    width: 100%;
+    height:60px;
+    background-color: #9fc5f8;
+    display: flex;
+    justify-content: space-around;
+}
+nav *{
+    color:white;
+}
+nav h1{
+    font-weight: bold;
+    font-size:23pt;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+ul{
+    display: flex;
+    list-style-type:none;
+}
+ul li{
+    font-size: 15pt;
+    margin:auto 30px;
+    cursor: pointer;    
+}
+/*header*/
+header{
+    width: 76%;
+    height:70px;
+    display: flex;
+    justify-content:space-between;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:12.5%;
+    
+}
+#line{
+    content:"";
+    height:3px;
+    width:76%;
+    background-color:black;
+    display:block;
+    margin-top:10px;
+    margin-left:12.5%;
+}
+header h2{
+    font-size: 20pt;
+    font-weight: bold;
+}
+header div{
+    display: flex;
+}
+header div p{
+    margin-right: 20px;
+    margin-top:30px
+}
+header div select{
+    margin-top:16px;
+    width:80px;
+}
+/*section*/
+section{
+    height:330px;
+    display: flex;
+    margin-top:16px;
+    margin-bottom:10px;
+    margin-left:10.7%;
+}
+section .container{
+    height:100%;
+    width:17.9%;
+    background-color:#eeeeee;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin:0 30px;
+}
+.container h2{
+    font-size: 16pt;
+    font-weight: bold;
+}
+.container img{
+    width:130px;
+    height:130px;
+    border-radius:50%
+}
+.container div{
+    display: flex;
+}
+.container .highercolor{
+    color:#ce2a27;
+    font-size: 28pt;
+    font-weight: bold;
+    margin-right: 14px;
+}
+.container .lowercolor{
+    color:#2c79e4;
+    font-size: 28pt;
+    font-weight: bold;
+}
+/*footer*/
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color:#eeeeee;
+    position: fixed;
+    height: 130px;
+    border:black solid 2px;
+    padding: 20px 20px;
+    margin-top: 20px;
+    width:73%;
+    margin-left:12.6%
+}
+footer img{
+    width:100px;
+    height:100px;
+    margin-top: auto;
+    margin-right:50px
+}
+footer div{
+    display: flex;
+    flex-direction: column;
+    margin-right:50px;
+}
+footer div h2{
+    font-weight: bold;
+}
+footer button{
+    background-color:#9fc5f8;
+    box-shadow: 2px 2px black;
+    width:100px;
+    height: 50px;
+    margin-top:55px
+}
+footer button:hover{
+    background-color:#1174f7;
+    box-shadow: 4px 4px black;
+    cursor: pointer;
+}
