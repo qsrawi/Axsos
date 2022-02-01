@@ -1,1 +1,2 @@
 import parent
+print("child")
