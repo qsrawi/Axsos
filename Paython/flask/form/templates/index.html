@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static' ,filename='style.css')}}">
+</head>
+<body>
+    <form action="/result" method="post">
+        <div>
+        Your name :<input type="text" name="username">
+        </div>
+        <div>
+        Dojo location 
+        <select name="location">
+            <option value="jenin">Jenin</option>
+            <option value="nablus">Nablus</option>
+            <option value="rammallah">Rammallah</option>
+        </select>
+        </div>
+        <div>
+        Favoraite language
+        <select name="language">
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="js">Js</option>
+        </select>
+        </div>
+        comment(optional):
+        <textarea name="comment"cols="5" rows="8"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
