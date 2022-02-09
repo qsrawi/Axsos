@@ -1,0 +1,23 @@
+h3{
+    margin:0 36%;
+    padding:10px;
+    border:3px solid black;
+    width:20%;
+    margin-top: 50px;
+    align-items:center;
+    box-sizing:border-box;
+    padding-left: 35px;
+}
+div{
+    margin:0 20%;
+    padding:50px 30px;
+    font-size:20pt;
+    font-weight:bold;
+    width:50%;
+    border:3px solid black;
+    margin-top: 50px;
+    align-items:right;
+    box-sizing:border-box;
+    padding-left: 230px;
+
+}
