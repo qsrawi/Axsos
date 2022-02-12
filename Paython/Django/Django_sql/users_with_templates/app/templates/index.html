@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static%}
+    <link rel="stylesheet" href="{%static '/style.css'%}">
+</head>
+<body>
+    <h1>All the Users</h1>
+    <!-- TABLE -->
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for user in all_users%}
+
+            <tr>
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.first_name}}     {{user.last_name}}</td>
+                <td>{{user.email_address}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <h1>Add User</h1>
+        <!-- FORM -->
+        <form action="/users" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col">
+                    <input name="first_name"type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col">
+                    <input name="last_name" type="text" class="form-control" placeholder="Last name">
+                </div>
+                <div class="col">
+                    <input name="email" type="text" class="form-control" placeholder="Email">
+                </div>
+                <div class="col">
+                    <input name="age" type="text" class="form-control" placeholder="Age">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+</body>
+</html>

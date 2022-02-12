@@ -1,0 +1,34 @@
+body{
+    background-color:gainsboro
+}
+h1{
+    margin:20px 630px;
+    width:300px;
+}
+
+.table{
+    margin:30px 200px;
+    width: 76% ;
+    border: 3px solid black;
+}
+.form-row{
+    width:72%;
+    margin:10px 200px;
+    display:grid ;
+    grid-template-columns:auto auto ;
+}
+.form-row div{
+    margin:20px ;
+}
+.table tr th,td{
+    text-align: center;
+}
+.table tr th{
+    font-size:larger
+}
+form button{
+    width:150px;
+    height:80px;
+    margin-left:670px;
+    margin-bottom: 50px;
+}
