@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #box{
+    margin:20px 570px;
+    width:{{request.session.width}};
+    background-color: {{request.session.bg_color}};
+    color: white;
+    padding:{{request.session.padding}};
+    box-sizing:border-box;
+    font-weight:bold;
+    font-size:25pt;
+    border:{{request.session.border}};
+        }
+    </style>
+    {% load static%}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <h2>Welcome to the Great Number Game!</h2>
+    <h3>I'm thinking of a number between 1 and 100...</h3>
+    <h4>Take a guess!</h4>
+    <div id="box">
+        {{request.session.name}}
+    </div>
+    <form action="/compare" method="post">
+        {% csrf_token %}
+        <input type="text" name="guss" class="form-control"placeholder="Insert here" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+</body>
+</html>

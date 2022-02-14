@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Roboto&display=swap');
+
+h2,h3,h4{
+    margin:20px 400px;
+    font-family: 'Dongle', sans-serif;
+}
+
+h2{
+    font-size:45pt;
+    margin-top:30px;
+    margin-left: 380px;
+}
+h3{
+    font-size:30pt;
+    margin-left: 450px;
+}
+h4{
+    font-size:25pt;
+    margin-left: 629px;
+}
+form .form-control{
+    width:190px;
+    height:40px;
+    padding:5px;
+    margin-left: 608px;
+}
+form .btn{
+    width:190px;
+    height:40px;
+    padding:5px;
+    margin-left: 608px;
+    margin-top: 20px;
+}
