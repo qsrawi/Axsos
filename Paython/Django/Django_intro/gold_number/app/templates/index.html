@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                background-color: rgb(209, 207, 207);
+            }
+            #first{
+                display:flex;
+                margin: 50px 20px;
+            }
+            #first h2{
+                width: 100px;
+                border:solid 2px black;
+                text-align:center;
+                margin-left: 20px;
+                color:rgb(163, 5, 5)
+            }
+            #container{
+                display:flex;
+                margin:30px 50px;
+            }
+            #container form{
+                margin-left: 50px;
+            }
+            #activity{
+                height: 200px;
+                margin:0 50px;
+                overflow: scroll;
+                border:solid 3px black
+            }
+            #activity *{
+                font-size: 19pt;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="/delete"style="margin-left:700px">destroy</a>
+        <div id="first">
+            <label>Your Gold : </label>
+            <h2>{{request.session.sum}}</h2>
+        </div>
+        <div id="container">
+        
+            <form action="/process" method="post">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        <input type="hidden" name="which_form" value="farm">
+                        <h5 class="card-title">Farm</h5>
+                        <p class="card-text">(earns 10-20 golds)</p>
+                        <button type="submit" class="btn btn-primary">Find Gold</button>
+                    </div>
+                </div>
+            </form>
+            <form action="/process" method="post">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        <input type="hidden" name="which_form" value="cave">
+                        <h5 class="card-title">Cave</h5>
+                        <p class="card-text"> (earns 5-10 golds)</p>
+                        <button type="submit"class="btn btn-primary">Find Gold</button>
+                    </div>
+                </div>
+            </form>
+            <form action="/process" method="post">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        <input type="hidden" name="which_form" value="house">
+                        <h5 class="card-title">House</h5>
+                        <p class="card-text">(earns 2-5 golds)</p>
+                        <button type="submit"class="btn btn-primary">Find Gold</button>
+                    </div>
+                </div>
+            </form>
+            <form action="/process" method="post">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        <input type="hidden" name="which_form" value="casino">
+                        <h5 class="card-title">Casino</h5>
+                        <p class="card-text">(earns/takes 0-50 golds)</p>
+                        <button type="submit"class="btn btn-primary">Find Gold</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="activity">
+            {%for text in request.session.txt%}
+            {%if request.session.color == 'red'%}
+            <p style="color:red">{{text}}</p>
+            {%else%}
+            <p style="color:green">{{text}}</p>
+            {%endif%}
+            {%endfor%}
+            
+        </div>
+    </body>
+    </html>
+</body>
+</html>
