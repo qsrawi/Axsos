@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .container{
+            margin:50px 50px;
+            padding:50px 50px;
+        }
+        .container .row form{
+            margin-left: 100px;
+        }
+        #line{
+            width: 90%;
+            margin:10px 50px ;
+            height:5px;
+            background-color:black;
+        }
+        #list{
+            margin:10px 600px
+        }
+    </style>
+</head>
+<body>
+    <!-- FORMS -->
+    <div class="container">
+        <div class="row">
+            <!-- FORM ADDING A DOJO -->
+            <form class="col-sm" action="/process" method="post">
+                {% csrf_token %}
+                <h2>Add a Dojo</h2>
+                <input type="hidden" name="which" value="dojo">
+                <div class="form-group">
+                    <label >Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label >City</label>
+                    <input type="text" name="city" class="form-control" placeholder="Enter city">
+                </div>
+                <div class="form-group">
+                    <label >State</label>
+                    <input type="text" name="state" class="form-control" placeholder="Enter state">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <!-- FORMS ADDING A NINGA -->
+            <form class="col-sm" action="/process" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="which" value="ninga">
+                <h2>Add a Ninga</h2>
+                <div class="form-group">
+                    <label >First_Name</label>
+                    <input type="text" name='first_name' class="form-control" placeholder="Enter first name">
+                </div>
+                <div class="form-group">
+                    <label >Last_name</label>
+                    <input type="text" name='last_name' class="form-control" placeholder="last name">
+                </div>
+                <div class="form-group">
+                    <select class="custom-select" id="inputGroupSelect01" name="dojo">
+                        <option selected>-select dojo-</option>
+                        {%for dojo in all_dojo%}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- LINE -->
+    <div id="line"></div>
+    <!-- LIST -->
+    <div id="list">
+        {%for dojo in all_dojo%}
+        <h3>Ningas in {{dojo.name}}</h3>
+        <ul>
+            {%for ninga in dojo.ninga.all%}
+            <li>{{ninga.first_name}}  {{ninga.last_name}}</li>
+            {%endfor%}
+        </ul>
+        {%endfor%}
+    </div>
+
+
+</body>
+</html>

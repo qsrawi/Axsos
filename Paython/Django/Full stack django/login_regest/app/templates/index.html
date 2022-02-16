@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        #container{
+            display:flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="row">
+        <div class="col-4">
+            <form action="" method="post">
+                <div class="mb-3"></div>
+                    <h2>Regestration</h2>
+                    <input type="hidden" name="which" value="reg">
+                    <label class="form-label">first name</label>
+                    <input type="text" name="first_name" class="form-control">
+                    <label class="form-label">last name</label>
+                    <input type="text" name="last_name" class="form-control">
+                    <label class="form-label">email</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1">
+                    <label class="form-label">password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    <label class="form-label">confirm_pw</label>
+                    <input type="text" name="pw" class="form-control">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <form action="" method="post">
+                <h2>Login</h2>
+                <input type="hidden" name="which" value="login">
+                <label class="form-label">email</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1">
+                <label class="form-label">password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
