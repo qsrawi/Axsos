@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+    #header{
+        text-align:right;
+        margin-right: 100px;
+        margin-top: 40px;
+    }
         button{
             height:300px;
             width:350px;
@@ -25,6 +30,9 @@
     </style>
 </head>
 <body>
+    <div id="header">
+        <a href="/shows">Go Back</a>
+    </div>
     <form action="/shows/{{show.id}}/delete/destroy" method="post">
         {% csrf_token %}
         <button type="submit">Are you sure you want to delete Tv show {{show.id}}</button>

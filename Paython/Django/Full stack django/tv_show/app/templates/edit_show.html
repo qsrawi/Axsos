@@ -22,9 +22,15 @@
 </head>
 <body>
     <div id="header">
-        
         <a href="/shows">Go Back</a>
     </div>
+    {%if messages%}
+    <ul>
+        {%for message in messages%}
+        <li {%if message.tag%} class="{{message.tag}}"{%endif%}>{{message}}</li>
+        {%endfor%}
+    </ul>
+    {%endif%}
     <form action="/shows/{{show.id}}/edit/edit" method="post">
         <h1>Edit Show  {{show.id}}</h1>
         {%csrf_token%}
