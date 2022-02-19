@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        form{
+            margin:30px 300px;
+            border:1px solid black;
+            padding :30px;
+            border-radius: 10px;
+        }
+        #header{
+            text-align:right;
+            margin-right: 100px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        
+        <a href="/shows">Go Back</a>
+    </div>
+    <form action="/shows/new/create" method="post">
+        <h1>Add a new show </h1>
+        {%csrf_token%}
+        <div class="form-group">
+            <label >title</label>
+            <input type="text" name="title" class="form-control" placeholder="title">
+        </div>
+        <div style="display:flex">
+            <div class="form-group">
+                <label >Network</label>
+                <input type="text" name="network" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label >Release Date</label>
+                <input type="date" name="release" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Description</label>
+            <textarea name="desc" class="form-control"rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Create</button>
+    </form>
+</body>
+</html>

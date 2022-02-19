@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            height:300px;
+            width:350px;
+            margin:200px 400px;
+            
+            background-color: rgb(126, 3, 3);
+            color :white;
+            border:2px solid black;
+            cursor:pointer;
+            font-size: 20pt;
+        }
+        button:hover{
+            background-color: rgb(241, 7, 7);
+            border:4px solid rgb(97, 86, 86);
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/shows/{{show.id}}/delete/destroy" method="post">
+        {% csrf_token %}
+        <button type="submit">Are you sure you want to delete Tv show {{show.id}}</button>
+    </form>
+</body>
+</html>
