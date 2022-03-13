@@ -3,15 +3,15 @@ package zooKeeper;
 public class Gorilla extends Mammal {
 
 		public void throwSomthing() {
-			System.out.println("i throw some thing");
+			System.out.println("I will throw some thing");
 			super.energyLevel -=10;}
 	
-		public void eateBannana() {
-			System.out.println("i eate bann");
+		public void eatBananas() {
+			System.out.println("I eat Banana");
 			super.energyLevel +=10;
 		}
 		public void climb() {
-			System.out.println("i climed");
+			System.out.println("I climbed");
 			super.energyLevel -=5;
 		
 	}
