@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+*{
+	font-size:12pt;
+}
+.h1{
+	font-size:20pt;
+	margin:40px 43%;
+}
+form{
+	padding:10px 350px;
+	margin:5px 20%;
+	display:block;
+	border:2px solid black;
+	/*flex-direction:coloumn;*/
+}
+form .btn{
+	width:300px;
+}
