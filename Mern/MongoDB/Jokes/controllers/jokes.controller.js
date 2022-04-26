@@ -1,32 +1,40 @@
 const Joke = require("../models/jokes.model");
 
 
+
 module.exports.findAllJokes = (req, res) => {
   Joke.find()
     .then((allJokes) => res.json({ jokes: allJokes }))
     .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
 
-module.exports.findOneSingleUser = (req, res) => {
-	User.findOne({ _id: req.params.id })
-		.then(oneSingleUser => res.json({ user: oneSingleUser }))
-		.catch(err => res.json({ message: "Something went wrong", error: err }));
+module.exports.findOneSingleJoke = (req, res) => {
+  Joke.findOne({ _id: req.params.id })
+    .then((singleJoke) => res.json({ joke: singleJoke }))
+    .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
 
-module.exports.createNewUser = (req, res) => {
-  User.create(req.body)
-    .then(newlyCreatedUser => res.json({ user: newlyCreatedUser }))
-    .catch(err => res.json({ message: "Something went wrong", error: err }));
+module.exports.createJoke = (req, res) => {
+  Joke.exists({ setup: req.body.setup })
+    .then((jokeExists) => {
+      if (jokeExists) {
+        // Promise.reject() will activate the .catch() below.
+        return Promise.reject("Joke already exists!");
+      }
+      return Joke.create(req.body);
+    })
+    .then((saveResult) => res.json(saveResult))
+    .catch((err) => res.json(err));
 };
 
-module.exports.updateExistingUser = (req, res) => {
-  User.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-    .then(updatedUser => res.json({ user: updatedUser }))
-    .catch(err => res.json({ message: "Something went wrong", error: err }));
+module.exports.updateJoke = (req, res) => {
+  Joke.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+    .then((updatedJoke) => res.json({ joke: updatedJoke }))
+    .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
 
-module.exports.deleteAnExistingUser = (req, res) => {
-  User.deleteOne({ _id: req.params.id })
-    .then(result => res.json({ result: result }))
-    .catch(err => res.json({ message: "Something went wrong", error: err }));
+module.exports.deleteJoke = (req, res) => {
+  Joke.deleteOne({ _id: req.params.id })
+    .then((result) => res.json({ result: result }))
+    .catch((err) => res.json({ message: "Something went wrong", error: err }));
 };
